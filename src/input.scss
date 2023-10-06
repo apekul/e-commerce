@@ -1,0 +1,193 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+$txt-primary: black;
+$txt-secondary: #ffff;
+$txt-accent: #3b82f6;
+$bg-primary: #ffff;
+$bg-secondary: #D9D9D9;
+$bg-footer1: #1D1D1D;
+$bg-footer2: #3E3B3B;
+
+*, html{
+  text-decoration: none;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+body{
+  font-family: 'Roboto', sans-serif;
+  font-size: clamp(10px, 2.5vw, 18px); 
+}
+
+
+.Layout{
+  min-height: 100vh;
+  display: flex; 
+  flex-direction: column;
+}
+
+.Container {
+    // min-height:4rem;
+    width: 90%;
+    max-width: 90rem;
+    margin: auto;
+
+}
+
+// NavbarStyle
+#navbar {
+  background: $bg-primary;
+  width: 100%;
+
+  box-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
+
+  .NavBox{
+    min-height:4rem;
+    width:100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .NavLogo{
+    display:flex;
+    align-items: center;
+    gap:2px;
+    
+    a {
+      color: $txt-primary;
+    }
+
+    a:hover{
+      scale: 120%;
+    }
+  }
+
+  .NavItems{
+    display:flex;
+    align-items: center;
+    gap:15px;
+    text-transform: upperCase;
+
+    li:first-child:after{
+      content: "";
+      display:block;
+      background: $txt-primary;
+      height:20px;
+      width:3px;
+    }
+
+    li{
+      display:flex;
+      align-items: center;
+      gap:15px;
+    }
+
+    li:first-child:hover {
+      text-decoration: underline;
+    }
+    li:nth-child(n+2):hover {
+      scale: 120%;
+    }
+
+    a {
+      display:flex;
+      color: black;
+    }
+  }
+}
+
+// Footer
+#footer{
+  color: $txt-secondary;
+
+}
+.footerInfo{
+  background: $bg-footer1;
+
+
+  .footerGroup{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 0 20px 0;
+    font-size: 13px;
+
+    a{
+      color: gray;
+    }
+    a:hover{
+      color: $txt-accent
+    }
+  }
+
+}
+#Contact{
+  background: $bg-footer2;
+
+  .ContactContainer{
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 0 20px 0;
+    flex-wrap: wrap;
+    gap: 20px;
+
+    .ContactGroup{
+      color: $txt-secondary;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+
+      .ContactListGroup{
+        display: flex;
+        flex-direction: column;
+        gap:10px;
+        font-size: 12px;
+      }
+      .ContactIcon{
+        font-size: 1rem;
+      }
+  
+      div:first-child{
+        display: flex;
+        align-items: center;
+        gap:5px;
+        font-weight: bold;
+        font-size: 1.5rem
+      }
+      a{
+        color: $txt-secondary;
+      }
+
+      #newsletter_input{
+        max-width: 10rem;
+        padding: 5px 3px 5px 3px;
+      }
+      #newsletter_button{
+        padding: 5px 3px 5px 3px;
+
+      }
+      #socialGroup{
+        display: flex;
+        gap: 0.5rem;
+        font-size: 1.5rem;
+      }
+    }
+  }
+}
+
+// HomePage
+#homepage{
+  flex: 1;
+  min-height: 100vh;
+}
+
+
+// Media
+@media only screen and (max-width: 600px) {
+
+  .footerGroup{
+    flex-direction: column-reverse;
+    gap:10px;
+  }
+
+}

@@ -1,0 +1,159 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+*, html {
+  text-decoration: none;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+  font-size: clamp(10px, 2.5vw, 18px);
+}
+
+.Layout {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.Container {
+  width: 90%;
+  max-width: 90rem;
+  margin: auto;
+}
+
+#navbar {
+  background: white;
+  width: 100%;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px -1px rgba(0, 0, 0, 0.1);
+}
+#navbar .NavBox {
+  min-height: 4rem;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+#navbar .NavLogo {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+}
+#navbar .NavLogo a {
+  color: black;
+}
+#navbar .NavLogo a:hover {
+  scale: 120%;
+}
+#navbar .NavItems {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  text-transform: upperCase;
+}
+#navbar .NavItems li:first-child:after {
+  content: "";
+  display: block;
+  background: black;
+  height: 20px;
+  width: 3px;
+}
+#navbar .NavItems li {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+#navbar .NavItems li:first-child:hover {
+  text-decoration: underline;
+}
+#navbar .NavItems li:nth-child(n+2):hover {
+  scale: 120%;
+}
+#navbar .NavItems a {
+  display: flex;
+  color: black;
+}
+
+#footer {
+  color: white;
+}
+
+.footerInfo {
+  background: #1D1D1D;
+}
+.footerInfo .footerGroup {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 0 20px 0;
+  font-size: 13px;
+}
+.footerInfo .footerGroup a {
+  color: gray;
+}
+.footerInfo .footerGroup a:hover {
+  color: #3b82f6;
+}
+
+#Contact {
+  background: #3E3B3B;
+}
+#Contact .ContactContainer {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px 0 20px 0;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+#Contact .ContactContainer .ContactGroup {
+  color: white;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+#Contact .ContactContainer .ContactGroup .ContactListGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  font-size: 12px;
+}
+#Contact .ContactContainer .ContactGroup .ContactIcon {
+  font-size: 1rem;
+}
+#Contact .ContactContainer .ContactGroup div:first-child {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-weight: bold;
+  font-size: 1.5rem;
+}
+#Contact .ContactContainer .ContactGroup a {
+  color: white;
+}
+#Contact .ContactContainer .ContactGroup #newsletter_input {
+  max-width: 10rem;
+  padding: 5px 3px 5px 3px;
+}
+#Contact .ContactContainer .ContactGroup #newsletter_button {
+  padding: 5px 3px 5px 3px;
+}
+#Contact .ContactContainer .ContactGroup #socialGroup {
+  display: flex;
+  gap: 0.5rem;
+  font-size: 1.5rem;
+}
+
+#homepage {
+  flex: 1;
+  min-height: 100vh;
+}
+
+@media only screen and (max-width: 600px) {
+  .footerGroup {
+    flex-direction: column-reverse;
+    gap: 10px;
+  }
+}
+
+/*# sourceMappingURL=output.css.map */
