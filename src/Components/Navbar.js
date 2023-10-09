@@ -1,11 +1,14 @@
-import React from "react";
+import React, { useState } from "react";
 import {
   AiOutlineHeart,
   AiOutlineShoppingCart,
   AiFillShopping,
+  AiOutlineClose,
 } from "react-icons/ai";
+import { GiHamburgerMenu } from "react-icons/gi";
 
 const Navbar = () => {
+  const [mobile, setMobile] = useState(false);
   return (
     <nav id="navbar">
       <div className="Container ">
@@ -31,7 +34,27 @@ const Navbar = () => {
               </a>
             </li>
           </ul>
+          <GiHamburgerMenu
+            className="burgerButton"
+            size="25px"
+            onClick={() => setMobile(!mobile)}
+          />
         </div>
+      </div>
+
+      <div
+        id="mySidenav"
+        className="sidenav"
+        style={{ width: mobile ? "10rem" : "0" }}
+      >
+        <AiOutlineClose
+          className="closebtn"
+          size="25px"
+          onClick={() => setMobile(!mobile)}
+        />
+        <a href="/Allproducts">Products</a>
+        <a href="/favourites">Favourites</a>
+        <a href="/cart">Cart</a>
       </div>
     </nav>
   );

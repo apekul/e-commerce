@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Homepage from "./Pages/Homepage";
 import AllProductsPage from "./Pages/AllProductsPage";
@@ -8,20 +8,29 @@ import FavPage from "./Pages/FavPage";
 import Navbar from "./Components/Navbar";
 import Footer from "./Components/Footer";
 
+import { Products } from "./Assets/products";
+import { Context, UserContext } from "./context";
+
 function App() {
+  const [data, setData] = useState(Products);
+  const [userData, setUserData] = useState({ favourites: [], cart: [] });
   return (
     <Router>
-      <div className="Layout">
-        <Navbar />
-        <Routes>
-          <Route path="/" element={<Homepage />} />
-          <Route path="/Allproducts" element={<AllProductsPage />} />
-          <Route path="/product/:id" element={<ProductPage />} />
-          <Route path="/cart" element={<CartPage />} />
-          <Route path="/favourites" element={<FavPage />} />
-        </Routes>
-        <Footer />
-      </div>
+      <Context.Provider value={[data, setData]}>
+        <div className="Layout">
+          <UserContext.Provider value={[userData, setUserData]}>
+            <Navbar />
+            <Routes>
+              <Route path="/" element={<Homepage />} />
+              <Route path="/Allproducts" element={<AllProductsPage />} />
+              <Route path="/product/:id" element={<ProductPage />} />
+              <Route path="/cart" element={<CartPage />} />
+              <Route path="/favourites" element={<FavPage />} />
+            </Routes>
+          </UserContext.Provider>
+          <Footer />
+        </div>
+      </Context.Provider>
     </Router>
   );
 }

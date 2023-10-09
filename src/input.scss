@@ -16,21 +16,22 @@ $bg-footer2: #3E3B3B;
 }
 body{
   font-family: 'Roboto', sans-serif;
-  font-size: clamp(10px, 2.5vw, 18px); 
-}
+  // font-size: clamp(10px, 2.5vw, 18px); 
+  font-size: clamp(13px, 2.5vw, 16px);
 
+}
 
 .Layout{
   min-height: 100vh;
   display: flex; 
   flex-direction: column;
+  gap: 2rem;
 }
 
 .Container {
-    // min-height:4rem;
-    width: 90%;
-    max-width: 90rem;
-    margin: auto;
+  max-width: 90rem;
+  margin: auto;
+  padding: 0px 20px 0px 20px;
 
 }
 
@@ -38,7 +39,6 @@ body{
 #navbar {
   background: $bg-primary;
   width: 100%;
-
   box-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
 
   .NavBox{
@@ -47,7 +47,12 @@ body{
     display: flex;
     align-items: center;
     justify-content: space-between;
+
+    .burgerButton{
+      display: none;
+    }
   }
+
   .NavLogo{
     display:flex;
     align-items: center;
@@ -94,15 +99,58 @@ body{
       color: black;
     }
   }
+  // Mobile Nav
+  .sidenav {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    right: 0;
+    background-color: #111;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+
+    
+    a {
+      padding: 8px 8px 8px 20px;
+      text-decoration: none;
+      font-size: 20px;
+      color: #818181;
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      transition: 0.3s;
+    }
+
+    a:hover {
+      color: #f1f1f1;
+    }
+    
+    .closebtn {
+      position: absolute;
+      color: #818181;
+      top: 20px;
+      cursor: pointer;
+      right: 20px;
+      margin-left: 50px;
+    } 
+
+
+  }
+  
+  
 }
 
 // Footer
 #footer{
   color: $txt-secondary;
-
 }
+
 .footerInfo{
   background: $bg-footer1;
+  // padding: 0px 20px 0px 20px;
 
 
   .footerGroup{
@@ -110,7 +158,7 @@ body{
     align-items: center;
     justify-content: space-between;
     padding: 20px 0 20px 0;
-    font-size: 13px;
+    font-size: clamp(13px, 2.5vw, 16px);
 
     a{
       color: gray;
@@ -123,13 +171,17 @@ body{
 }
 #Contact{
   background: $bg-footer2;
+  padding: 0px 20px 0px 20px;
+
 
   .ContactContainer{
     display: flex;
     justify-content: space-between;
     padding: 20px 0 20px 0;
+    width: auto;
+    margin: auto;
     flex-wrap: wrap;
-    gap: 20px;
+    gap: 30px;
 
     .ContactGroup{
       color: $txt-secondary;
@@ -137,11 +189,19 @@ body{
       flex-direction: column;
       gap: 10px;
 
+      .ContactPadding{
+        padding-left: 22px ;
+      }
+
       .ContactListGroup{
         display: flex;
         flex-direction: column;
         gap:10px;
-        font-size: 12px;
+
+        a:hover{
+          text-decoration: underline;
+        }
+
       }
       .ContactIcon{
         font-size: 1rem;
@@ -169,25 +229,128 @@ body{
       #socialGroup{
         display: flex;
         gap: 0.5rem;
-        font-size: 1.5rem;
+        font-size: 2rem;
+
+        li {
+          transition: all 0.5s ease-in-out;
+        }
+        
+        li:hover {
+          transform: scale(120%);
+        }
       }
     }
   }
 }
-
-// HomePage
+// Homepage
 #homepage{
   flex: 1;
-  min-height: 100vh;
-}
 
+  // Hero
+  #heroGrid{
+    display: grid;
+    min-height: 40rem;
+    max-height: 40rem;
+    gap: 10px;
+    padding-bottom: 2rem;
+    grid-template: repeat(2, 1fr) / repeat(4, 1fr);
+    
+    .HeroGroup {
+      width: 100%;
+      height: 100%;
+      position: relative;
+      overflow: hidden;
+
+      p{
+        color:white;
+        position: absolute;
+        bottom: 1rem;
+        left: 1rem;
+        font-size: clamp(2rem, 2.5vw, 3rem);
+
+        font-weight: bold;
+      }
+
+      img {
+        object-fit: cover;
+        object-position:40% 20%;
+        width: 100%;
+        height: 100%;
+        cursor: pointer;
+        filter: brightness(50%);
+        transition: all 0.3s ease-in-out;
+      }
+
+      a:hover{
+        img{
+          filter: brightness(80%);
+          transform: scale(1.2);
+        }
+      }
+    }
+
+    .heroItem1{
+      grid-area: 1 / 1 / span 2 / span 2;
+    }
+    .heroItem2{
+      grid-area: 1 / 3 / 1 / 3;
+
+    }
+    .heroItem3{
+      grid-area: 2 / 3 / 2 / 3;
+
+    }
+    .heroItem4{
+      grid-area: 1 / 4 / span 2 / 4;
+    }
+  }
+
+  // Trending
+  #trendingGroup{
+    min-height: 30vh;
+    background-color: lightcoral;
+  }
+}
 
 // Media
 @media only screen and (max-width: 600px) {
+  .ContactContainer{
+    justify-content: center;
+    align-items: start;
+    flex-direction: column;
+  }
+
+  .ContactIcon{
+    display: none;
+  }
+
+  .ContactPadding{
+    padding: 0 !important;
+  }
 
   .footerGroup{
     flex-direction: column-reverse;
     gap:10px;
   }
 
+  .NavItems{
+    display: none !important;
+  }
+
+  .burgerButton{
+    display: flex !important;
+  }
+
+
+}
+
+@media only screen and (max-width: 900px) {
+  #heroGrid{
+    display: flex !important;
+    flex-direction: column;
+    p{
+      font-size: clamp(2rem, 10vw, 5rem) !important;
+
+    }
+  }
 }

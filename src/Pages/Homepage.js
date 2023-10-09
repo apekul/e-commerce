@@ -1,23 +1,18 @@
-import React from "react";
-import { Products } from "../Assets/products";
+import React, { useContext } from "react";
+import Hero from "../Components/Hero";
+import Trending from "../Components/Trending";
+import { Context, UserContext } from "../context";
 
 const Homepage = () => {
+  const [data, setData] = useContext(Context);
+  const [userData, setUserData] = useContext(UserContext);
+
   return (
     <section id="homepage">
-      Homepage
-      {/* <div>
-        {Object.values(Products).map((item, index) => (
-          <div key={item.id}>
-            <p>{item.title}</p>
-            <img src={item.thumbnail} alt={item.title} />
-            {item?.images.map((image, i) => (
-              <div key={i}>
-                <img src={image} alt={`${item.title}`} />
-              </div>
-            ))}
-          </div>
-        ))}
-      </div> */}
+      <div className="Container">
+        <Hero categories={[...new Set(data.map((v, i) => v.category))]} />
+        <Trending />
+      </div>
     </section>
   );
 };
