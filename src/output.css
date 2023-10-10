@@ -76,7 +76,6 @@ body {
 }
 #navbar .NavItems a {
   display: flex;
-  color: black;
 }
 #navbar .sidenav {
   height: 100%;
@@ -203,7 +202,7 @@ body {
   min-height: 40rem;
   max-height: 40rem;
   gap: 10px;
-  padding-bottom: 2rem;
+  padding-bottom: 8rem;
   grid-template: repeat(2, 1fr)/repeat(4, 1fr);
 }
 #homepage #heroGrid .HeroGroup {
@@ -245,9 +244,127 @@ body {
 #homepage #heroGrid .heroItem4 {
   grid-area: 1/4/span 2/4;
 }
-#homepage #trendingGroup {
-  min-height: 30vh;
-  background-color: lightcoral;
+#homepage #trendingSection {
+  flex: 1;
+}
+#homepage #trendingSection .TrendingGroup {
+  padding-bottom: 8rem;
+  position: relative;
+}
+#homepage #trendingSection .TrendingGroup .NextButton {
+  background-color: white;
+  padding: 3px;
+  cursor: pointer;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
+}
+#homepage #trendingSection .TrendingGroup #left-button {
+  position: absolute;
+  top: 13rem;
+  left: -1rem;
+}
+#homepage #trendingSection .TrendingGroup #right-button {
+  position: absolute;
+  top: 13rem;
+  right: -1rem;
+}
+#homepage #trendingSection .TrendingGroup h1 {
+  font-size: 2rem;
+  padding-bottom: 20px;
+}
+#homepage #trendingSection .TrendingGroup ul {
+  display: flex;
+  gap: 20px;
+  height: 20rem;
+  overflow-x: scroll;
+  scroll-behavior: smooth;
+  padding-bottom: 30px;
+}
+#homepage #trendingSection .TrendingGroup ul li {
+  height: auto;
+  transition: all 0.1s ease-in-out;
+  border-radius: 5px;
+  background-color: white;
+}
+#homepage #trendingSection .TrendingGroup ul li .HeartButton {
+  background: white;
+  color: black;
+  border-radius: 100%;
+  display: flex;
+  align-items: center;
+  padding: 5px;
+  position: absolute;
+  top: 5px;
+  right: 5px;
+}
+#homepage #trendingSection .TrendingGroup ul li .HeartButton:hover {
+  background: #D9D9D9;
+}
+#homepage #trendingSection .TrendingGroup ul li a {
+  display: flex;
+  align-items: start;
+  justify-content: start;
+  height: 100%;
+  width: 15rem;
+  gap: 10px;
+  flex-direction: column;
+  position: relative;
+  padding: 0px 10px 0px 10px;
+}
+#homepage #trendingSection .TrendingGroup ul li a .TrendingTextGroup {
+  display: flex;
+  color: black;
+  flex-direction: column;
+  gap: 5px;
+}
+#homepage #trendingSection .TrendingGroup ul li a .TrendingTextGroup span {
+  display: flex;
+  align-items: center;
+}
+#homepage #trendingSection .TrendingGroup ul li a .TrendingTextGroup p:last-child {
+  font-weight: bold;
+}
+#homepage #trendingSection .TrendingGroup ul li a .TrendingHoverImages {
+  transition: all 0.1s ease-in-out;
+  visibility: hidden;
+  position: absolute;
+  bottom: 5.5rem;
+  width: 15rem;
+  height: auto;
+  background-color: white;
+  display: flex;
+  align-items: center;
+}
+#homepage #trendingSection .TrendingGroup ul li a .TrendingHoverImages img {
+  width: 3rem;
+  height: 3rem;
+  border: 2px white solid;
+  object-fit: cover;
+  object-position: top;
+}
+#homepage #trendingSection .TrendingGroup ul li a .TrendingHoverImages img:hover {
+  border: 2px black solid;
+}
+#homepage #trendingSection .TrendingGroup ul a:after {
+  content: "";
+  position: absolute;
+  bottom: -30px;
+  left: 0;
+  right: 0;
+  height: 0.5em;
+  border-top: 1px solid lightgray;
+  z-index: -1;
+}
+#homepage #trendingSection .TrendingGroup ul li:hover {
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -4px rgba(0, 0, 0, 0.1);
+}
+#homepage #trendingSection .TrendingGroup ul li:hover .TrendingHoverImages {
+  transform: translateY(-0.2rem);
+  visibility: visible;
+}
+#homepage #trendingSection .TrendingGroup ul img {
+  object-fit: contain;
+  height: 70%;
+  width: 100%;
 }
 
 @media only screen and (max-width: 600px) {
@@ -280,6 +397,16 @@ body {
   }
   #heroGrid p {
     font-size: clamp(2rem, 10vw, 5rem) !important;
+  }
+  .TrendingGroup a {
+    width: 10rem !important;
+  }
+  .TrendingGroup .TrendingHoverImages {
+    width: 10rem !important;
+  }
+  .TrendingGroup .TrendingHoverImages img {
+    width: 2rem !important;
+    height: 2rem !important;
   }
 }
 

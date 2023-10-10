@@ -11,7 +11,7 @@ const Homepage = () => {
     <section id="homepage">
       <div className="Container">
         <Hero categories={[...new Set(data.map((v, i) => v.category))]} />
-        <Trending />
+        <Trending data={data} />
       </div>
     </section>
   );
