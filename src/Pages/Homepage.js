@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
 import Hero from "../Components/Hero";
-import Trending from "../Components/Trending";
+import ScrollableSection from "../Components/ScrollableSection";
 import { Context, UserContext } from "../context";
 
 const Homepage = () => {
@@ -11,7 +11,8 @@ const Homepage = () => {
     <section id="homepage">
       <div className="Container">
         <Hero categories={[...new Set(data.map((v, i) => v.category))]} />
-        <Trending data={data} />
+        <ScrollableSection data={data} title="Trending Now" />
+        <ScrollableSection data={data} title="Bestsellers" />
       </div>
     </section>
   );
