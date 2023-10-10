@@ -11,8 +11,8 @@ const Homepage = () => {
     <section id="homepage">
       <div className="Container">
         <Hero categories={[...new Set(data.map((v, i) => v.category))]} />
-        <ScrollableSection data={data} title="Trending Now" />
-        <ScrollableSection data={data} title="Bestsellers" />
+        <ScrollableSection data={data.slice(0, 10)} title="Trending Now" />
+        <ScrollableSection data={data.slice(0, 10)} title="Bestsellers" />
       </div>
     </section>
   );

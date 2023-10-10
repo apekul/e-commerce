@@ -5,6 +5,7 @@ import {
   AiOutlineLeft,
   AiOutlineRight,
 } from "react-icons/ai";
+import { BiCartAdd } from "react-icons/bi";
 
 const ScrollableSection = ({ data, title }) => {
   const trendingRef = useRef(null);
@@ -23,12 +24,18 @@ const ScrollableSection = ({ data, title }) => {
       <div className="TrendingGroup">
         <h1>{title}</h1>
         <ul ref={trendingRef}>
-          {Object.values(data)
-          .map((item, index) => (
+          {Object.values(data).map((item, index) => (
             <li key={index}>
-              <a href="/">
+              <a href={`/product/${item.id}`}>
                 <span>
-                  <AiOutlineHeart size="25px" className="HeartButton" />
+                  <AiOutlineHeart
+                    size="25px"
+                    className="HeartButton ActionButton"
+                  />
+                  <BiCartAdd
+                    size="25px"
+                    className="AddToCartButton ActionButton"
+                  />
                 </span>
                 <img
                   src={
@@ -61,7 +68,7 @@ const ScrollableSection = ({ data, title }) => {
                         )}
                       </React.Fragment>
                     ))}
-                    <p>({item.rating})</p>
+                    <p>{item.rating}</p>
                   </span>
                   <p>${item.price}</p>
                 </div>
