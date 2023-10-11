@@ -278,7 +278,7 @@ body {
   display: flex;
   gap: 20px;
   height: 25rem;
-  overflow-x: scroll;
+  overflow: hidden;
   scroll-behavior: smooth;
   padding-bottom: 30px;
 }
@@ -391,21 +391,155 @@ body {
   gap: 10px;
   padding-bottom: 8rem;
 }
+#product .ProductPrice {
+  font-weight: bold;
+  font-size: 2rem;
+}
 #product .ProductGroup {
   width: 100%;
   height: 100%;
   display: flex;
-  gap: 10px;
-  padding: 10px;
+  gap: 2rem;
+  position: relative;
 }
 #product .ProductGroup img {
-  width: 50%;
-  object-fit: contain;
+  width: 35rem;
+  height: 35rem;
+  object-fit: cover;
   object-position: top;
 }
-#product .ProductGroup div {
+#product .ProductGroup .ProductHoverImages {
+  transition: all 0.1s ease-in-out;
+  cursor: pointer;
+  width: 30rem;
+  height: auto;
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  overflow: auto;
+}
+#product .ProductGroup .ProductHoverImages img {
+  width: 5rem;
+  height: 5rem;
+  border: 2px white solid;
+  object-fit: cover;
+  object-position: top;
+}
+#product .ProductGroup .ProductHoverImages img:hover {
+  border: 2px black solid;
+}
+#product .ProductGroup .ProductBox {
+  display: grid;
+  grid-template: repeat(6, 1fr)/repeat(2, 1fr);
+  width: 100%;
+  gap: 10px;
+}
+#product .ProductGroup .ProductBox .ProductHeaderGroup {
+  grid-area: 1/1/1/1;
+}
+#product .ProductGroup .ProductBox .ProductHeaderGroup p {
+  padding-top: 5px;
+}
+#product .ProductGroup .ProductBox .ProductHeaderGroup h1 {
+  font-size: 2rem;
+  font-weight: bold;
+}
+#product .ProductGroup .ProductBox .ProductDesctription {
+  font-size: clamp(16px, 2.5vw, 20px);
+  grid-area: 2/1/5/1;
+}
+#product .ProductGroup .ProductBox .CartButtonGroup {
   display: flex;
   flex-direction: column;
+  align-items: start;
+  justify-content: end;
+  gap: 10px;
+  grid-area: 5/1/span 6/1;
+  user-select: none;
+}
+#product .ProductGroup .ProductBox .CartButtonGroup .QuantityGroup {
+  font-size: 40px;
+}
+#product .ProductGroup .ProductBox .CartButtonGroup .QuantityGroup .QuantityButton {
+  transition: all 0.1s ease-in-out;
+  cursor: pointer;
+  color: #D9D9D9;
+}
+#product .ProductGroup .ProductBox .CartButtonGroup .QuantityGroup .QuantityButton:hover {
+  color: #3E3B3B;
+}
+#product .ProductGroup .ProductBox .CartButtonGroup .QuantityGroup p {
+  font-size: 30px;
+  padding: 0px 10px 0px 10px;
+}
+#product .ProductGroup .ProductBox .CartButtonGroup button {
+  padding: 10px 20px 10px 20px;
+  border: 1px solid black;
+  cursor: pointer;
+  font-size: 1.5rem;
+  background-color: white;
+}
+#product .ProductGroup .ProductBox .CartButtonGroup button:hover {
+  background-color: #3b82f6;
+  border: 1px solid white;
+  color: white;
+}
+#product .ProductGroup .ProductBox .CartButtonGroup div {
+  display: flex;
+  align-items: center;
+}
+#product .ProductGroup .ProductBox .RatingGroup {
+  display: flex;
+  align-items: center;
+  padding-top: 5px;
+}
+#product .ProductGroup .ProductBox .RatingGroup p {
+  font-weight: bold;
+  padding: 5px;
+  margin-left: 5px;
+  background-color: #fbbf24;
+}
+#product .ProductGroup .ProductBox .ProductStockInfo {
+  grid-area: 5/2/span 6/2;
+  gap: 5px;
+  display: flex;
+  justify-content: end;
+  flex-direction: column;
+  align-items: start;
+}
+#product .ProductGroup .ProductBox .ProductStockInfo .StockInfoGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  border: 1px solid black;
+  padding: 10px;
+  border-radius: 10px;
+}
+#product .ProductGroup .ProductBox .ProductStockInfo .StockText {
+  font-size: 2rem;
+}
+#product .ProductGroup .ProductBox .ProductStockInfo p:first-child {
+  font-weight: bold;
+}
+#product .ProductGroup .ProductBox .ProductStockInfo span {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+#product .ProductGroup .ProductBox .ProductStockInfo span:last-child {
+  background-color: #D9D9D9;
+  width: fit-content;
+  padding: 5px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+#product .ProductGroup .ProductBox .ProductStockInfo span:last-child:hover {
+  background-color: #3E3B3B;
+  color: white;
+}
+#product .ProductGroup .ProductBox .ProductStockInfo span:nth-child(-n+3) {
+  gap: 15px;
 }
 
 #reviews {
