@@ -247,34 +247,34 @@ body {
   grid-area: 1/4/span 2/4;
 }
 
-#trendingSection {
+.trendingSection {
   flex: 1;
 }
-#trendingSection .TrendingGroup {
+.trendingSection .TrendingGroup {
   padding-bottom: 8rem;
   position: relative;
 }
-#trendingSection .TrendingGroup .NextButton {
+.trendingSection .TrendingGroup .NextButton {
   background-color: white;
   padding: 3px;
   cursor: pointer;
   box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
 }
-#trendingSection .TrendingGroup #left-button {
+.trendingSection .TrendingGroup #left-button {
   position: absolute;
   top: 13rem;
   left: -1rem;
 }
-#trendingSection .TrendingGroup #right-button {
+.trendingSection .TrendingGroup #right-button {
   position: absolute;
   top: 13rem;
   right: -1rem;
 }
-#trendingSection .TrendingGroup h1 {
+.trendingSection .TrendingGroup h1 {
   font-size: 2rem;
   padding-bottom: 20px;
 }
-#trendingSection .TrendingGroup ul {
+.trendingSection .TrendingGroup ul {
   display: flex;
   gap: 20px;
   height: 25rem;
@@ -282,13 +282,13 @@ body {
   scroll-behavior: smooth;
   padding-bottom: 30px;
 }
-#trendingSection .TrendingGroup ul li {
+.trendingSection .TrendingGroup ul li {
   height: auto;
   transition: all 0.1s ease-in-out;
   border-radius: 5px;
   background-color: white;
 }
-#trendingSection .TrendingGroup ul li .ActionButton {
+.trendingSection .TrendingGroup ul li .ActionButton {
   background: white;
   color: black;
   border-radius: 100%;
@@ -296,20 +296,20 @@ body {
   align-items: center;
   padding: 5px;
 }
-#trendingSection .TrendingGroup ul li .HeartButton {
+.trendingSection .TrendingGroup ul li .HeartButton {
   position: absolute;
   top: 12px;
   right: 10px;
 }
-#trendingSection .TrendingGroup ul li .AddToCartButton {
+.trendingSection .TrendingGroup ul li .AddToCartButton {
   position: absolute;
   bottom: 12px;
   right: 10px;
 }
-#trendingSection .TrendingGroup ul li .ActionButton:hover {
+.trendingSection .TrendingGroup ul li .ActionButton:hover {
   background: #D9D9D9;
 }
-#trendingSection .TrendingGroup ul li a {
+.trendingSection .TrendingGroup ul li a {
   display: flex;
   align-items: start;
   justify-content: start;
@@ -320,25 +320,25 @@ body {
   position: relative;
   padding: 0px 10px 0px 10px;
 }
-#trendingSection .TrendingGroup ul li a .TrendingTextGroup {
+.trendingSection .TrendingGroup ul li a .TrendingTextGroup {
   display: flex;
   color: black;
   flex-direction: column;
   gap: 5px;
 }
-#trendingSection .TrendingGroup ul li a .TrendingTextGroup span {
+.trendingSection .TrendingGroup ul li a .TrendingTextGroup span {
   display: flex;
   align-items: center;
 }
-#trendingSection .TrendingGroup ul li a .TrendingTextGroup span p {
+.trendingSection .TrendingGroup ul li a .TrendingTextGroup span p {
   padding: 5px;
   margin-left: 5px;
   background-color: #fbbf24;
 }
-#trendingSection .TrendingGroup ul li a .TrendingTextGroup p:last-child {
+.trendingSection .TrendingGroup ul li a .TrendingTextGroup p:last-child {
   font-weight: bold;
 }
-#trendingSection .TrendingGroup ul li a .TrendingHoverImages {
+.trendingSection .TrendingGroup ul li a .TrendingHoverImages {
   transition: all 0.1s ease-in-out;
   visibility: hidden;
   position: absolute;
@@ -349,17 +349,17 @@ body {
   display: flex;
   align-items: center;
 }
-#trendingSection .TrendingGroup ul li a .TrendingHoverImages img {
+.trendingSection .TrendingGroup ul li a .TrendingHoverImages img {
   width: 3rem;
   height: 3rem;
   border: 2px white solid;
   object-fit: cover;
   object-position: top;
 }
-#trendingSection .TrendingGroup ul li a .TrendingHoverImages img:hover {
+.trendingSection .TrendingGroup ul li a .TrendingHoverImages img:hover {
   border: 2px black solid;
 }
-#trendingSection .TrendingGroup ul a:after {
+.trendingSection .TrendingGroup ul a:after {
   content: "";
   position: absolute;
   bottom: -30px;
@@ -369,14 +369,14 @@ body {
   border-top: 1px solid lightgray;
   z-index: -1;
 }
-#trendingSection .TrendingGroup ul li:hover {
+.trendingSection .TrendingGroup ul li:hover {
   box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -4px rgba(0, 0, 0, 0.1);
 }
-#trendingSection .TrendingGroup ul li:hover .TrendingHoverImages {
+.trendingSection .TrendingGroup ul li:hover .TrendingHoverImages {
   transform: translateY(-0.2rem);
   visibility: visible;
 }
-#trendingSection .TrendingGroup ul img {
+.trendingSection .TrendingGroup ul img {
   object-fit: contain;
   height: 70%;
   width: 100%;
@@ -543,6 +543,102 @@ body {
   gap: 15px;
 }
 
+.BannerReverse {
+  flex-direction: row-reverse;
+}
+
+.BannerSection {
+  background-color: #D9D9D9;
+  display: flex;
+  height: 35rem;
+  width: 100%;
+  align-items: center;
+  margin-bottom: 8rem;
+  font-size: clamp(1rem, 2.5vw, 1.5rem);
+}
+.BannerSection img {
+  width: 50%;
+  height: 100%;
+  object-fit: cover;
+  object-position: left;
+}
+.BannerSection div {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.BannerSection div span {
+  width: 80%;
+}
+.BannerSection div span h1, .BannerSection div span p, .BannerSection div span a {
+  margin-bottom: 20px;
+}
+.BannerSection div span a {
+  padding: 1rem 2rem 1rem 2rem;
+  border: none;
+  font-size: 1rem;
+  font-weight: bold;
+  background-color: black;
+  color: white;
+  border: 2px solid black;
+  transition: all 0.2s ease-in-out;
+  cursor: pointer;
+}
+.BannerSection div span a:hover {
+  background-color: #D9D9D9;
+  color: black;
+}
+
+.GetInspiredSection {
+  background-color: #D9D9D9;
+  display: flex;
+  flex-direction: column;
+  height: auto;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 8rem;
+  font-size: clamp(1rem, 2.5vw, 1.5rem);
+}
+.GetInspiredSection button {
+  width: 10rem;
+  height: 2rem;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+.GetInspiredSection .InspiredGrid {
+  width: 100%;
+  height: 50rem;
+  display: grid;
+  gap: 10px;
+  grid-template: repeat(10, 1fr)/repeat(3, 1fr);
+}
+.GetInspiredSection .InspiredGrid div {
+  width: auto;
+  height: auto;
+  background-color: lightcoral;
+}
+.GetInspiredSection .InspiredGrid div:first-child {
+  grid-area: 1/1/span 5/1;
+}
+.GetInspiredSection .InspiredGrid div:nth-child(2) {
+  grid-area: 1/2/span 4/2;
+}
+.GetInspiredSection .InspiredGrid div:nth-child(3) {
+  grid-area: 1/3/span 5/3;
+}
+.GetInspiredSection .InspiredGrid div:nth-child(4) {
+  grid-area: 6/1/span 10/1;
+}
+.GetInspiredSection .InspiredGrid div:nth-child(5) {
+  grid-area: 5/2/10/2;
+}
+.GetInspiredSection .InspiredGrid div:nth-child(6) {
+  grid-area: 6/3/span 10/3;
+}
+
 @media only screen and (max-width: 1050px) {
   .ProductGroup {
     gap: 1rem !important;
@@ -619,6 +715,18 @@ body {
   .ProductGroup .ProductBox .ProductStockInfo {
     grid-area: 3/1/4/1 !important;
     align-items: center !important;
+  }
+  .BannerSection {
+    flex-direction: column;
+  }
+  .BannerSection img {
+    width: 100%;
+    height: calc(100% - 15rem) !important;
+    object-fit: cover !important;
+    object-position: left;
+  }
+  .BannerSection div {
+    height: 50%;
   }
 }
 @media only screen and (max-width: 600px) {

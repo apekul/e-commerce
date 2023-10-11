@@ -20,7 +20,7 @@ const ScrollableSection = ({ data, title }) => {
   };
 
   return (
-    <section id="trendingSection">
+    <section className="trendingSection">
       <div className="TrendingGroup">
         <h1>{title}</h1>
         <ul ref={trendingRef}>
