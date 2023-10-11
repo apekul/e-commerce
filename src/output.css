@@ -402,7 +402,7 @@ body {
   gap: 2rem;
   position: relative;
 }
-#product .ProductGroup img {
+#product .ProductGroup .ProductMainImg {
   width: 35rem;
   height: 35rem;
   object-fit: cover;
@@ -436,7 +436,7 @@ body {
   gap: 10px;
 }
 #product .ProductGroup .ProductBox .ProductHeaderGroup {
-  grid-area: 1/1/1/1;
+  grid-area: 1/1/1/span 2;
 }
 #product .ProductGroup .ProductBox .ProductHeaderGroup p {
   padding-top: 5px;
@@ -447,7 +447,7 @@ body {
 }
 #product .ProductGroup .ProductBox .ProductDesctription {
   font-size: clamp(16px, 2.5vw, 20px);
-  grid-area: 2/1/5/1;
+  grid-area: 2/1/5/span 2;
 }
 #product .ProductGroup .ProductBox .CartButtonGroup {
   display: flex;
@@ -533,6 +533,7 @@ body {
   padding: 5px;
   border-radius: 10px;
   cursor: pointer;
+  user-select: none;
 }
 #product .ProductGroup .ProductBox .ProductStockInfo span:last-child:hover {
   background-color: #3E3B3B;
@@ -557,6 +558,84 @@ body {
   padding: 10px;
 }
 
+@media only screen and (max-width: 1050px) {
+  .ProductGroup {
+    gap: 1rem !important;
+  }
+  .ProductGroup .ProductMainImg {
+    width: 28rem !important;
+    height: 28rem !important;
+  }
+  .ProductGroup .ProductBox .ProductDesctription {
+    grid-area: 2/1/4/span 2 !important;
+  }
+  .ProductGroup .ProductBox .CartButtonGroup {
+    grid-area: 5/1/span 6/span 2 !important;
+  }
+  .ProductGroup .ProductBox .ProductStockInfo {
+    grid-area: 4/1/5/span 2 !important;
+  }
+}
+@media only screen and (max-width: 900px) {
+  #heroGrid {
+    display: flex !important;
+    flex-direction: column;
+  }
+  #heroGrid p {
+    font-size: clamp(2rem, 10vw, 5rem) !important;
+  }
+  .TrendingGroup a {
+    width: 10rem !important;
+  }
+  .TrendingGroup .TrendingHoverImages {
+    width: 10rem !important;
+  }
+  .TrendingGroup .TrendingHoverImages img {
+    width: 2rem !important;
+    height: 2rem !important;
+  }
+}
+@media only screen and (max-width: 800px) {
+  #product {
+    height: auto;
+  }
+  .ProductGroup {
+    flex-direction: column;
+    align-items: center;
+  }
+  .ProductGroup .ProductMainImg {
+    width: 15rem !important;
+    height: 15rem !important;
+  }
+  .ProductGroup .ProductHoverImages img {
+    width: 3rem !important;
+    height: 3rem !important;
+  }
+  .ProductGroup .ProductBox {
+    grid-template: repeat(4, 1fr)/1fr !important;
+  }
+  .ProductGroup .ProductBox .ProductHeaderGroup {
+    display: flex !important;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  .ProductGroup .ProductBox .ProductDesctription {
+    grid-area: 2/1/3/span 2 !important;
+    display: flex !important;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  .ProductGroup .ProductBox .CartButtonGroup {
+    grid-area: 5/1/4/1 !important;
+    align-items: center !important;
+  }
+  .ProductGroup .ProductBox .ProductStockInfo {
+    grid-area: 3/1/4/1 !important;
+    align-items: center !important;
+  }
+}
 @media only screen and (max-width: 600px) {
   .ContactContainer {
     justify-content: center;
@@ -578,25 +657,6 @@ body {
   }
   .burgerButton {
     display: flex !important;
-  }
-}
-@media only screen and (max-width: 900px) {
-  #heroGrid {
-    display: flex !important;
-    flex-direction: column;
-  }
-  #heroGrid p {
-    font-size: clamp(2rem, 10vw, 5rem) !important;
-  }
-  .TrendingGroup a {
-    width: 10rem !important;
-  }
-  .TrendingGroup .TrendingHoverImages {
-    width: 10rem !important;
-  }
-  .TrendingGroup .TrendingHoverImages img {
-    width: 2rem !important;
-    height: 2rem !important;
   }
 }
 

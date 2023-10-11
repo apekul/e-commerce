@@ -33,7 +33,11 @@ const Product = ({ item }) => {
     <section id="product">
       <div className="ProductGroup">
         <div>
-          <img src={swapImage || item.images[0]} alt={item.title} />
+          <img
+            className="ProductMainImg"
+            src={swapImage || item.images[0]}
+            alt={item.title}
+          />
           <div className="ProductHoverImages">
             {Object.values(item.images).map((img, i) => (
               <img

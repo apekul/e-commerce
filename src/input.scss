@@ -485,7 +485,7 @@ body{
     gap: 2rem;
     position: relative;
 
-    img{
+    .ProductMainImg{
       width: 35rem;
       height: 35rem;
       object-fit: cover;
@@ -516,8 +516,6 @@ body{
       }
     }
   
-
-  
     .ProductBox{
       display: grid;
       grid-template: repeat(6,1fr) / repeat(2, 1fr);
@@ -525,7 +523,7 @@ body{
       gap:10px;
 
       .ProductHeaderGroup{
-        grid-area: 1 / 1 / 1 / 1;
+        grid-area: 1 / 1 / 1 / span 2;
         
         p{
           padding-top: 5px;
@@ -538,7 +536,7 @@ body{
       
       .ProductDesctription{
         font-size: clamp(16px, 2.5vw, 20px);
-        grid-area: 2 / 1 / 5 / 1 ;
+        grid-area: 2 / 1 / 5 / span 2 ;
         
       }
 
@@ -635,6 +633,7 @@ body{
           padding: 5px;
           border-radius: 10px;
           cursor: pointer;
+          user-select: none;
         }
         span:last-child:hover{
           background-color: $bg-footer2;
@@ -666,35 +665,27 @@ body{
 }
 
 // MediaQ
-@media only screen and (max-width: 600px) {
-  .ContactContainer{
-    justify-content: center;
-    align-items: start;
-    flex-direction: column;
+
+@media only screen and (max-width: 1050px) {
+  .ProductGroup{
+    gap: 1rem !important;
+
+    .ProductMainImg{
+      width: 28rem !important;
+      height: 28rem !important;
+    }
+    .ProductBox{
+      .ProductDesctription{
+        grid-area: 2 / 1 / 4 / span 2 !important;
+      }
+      .CartButtonGroup{
+        grid-area: 5 / 1 / span 6 / span 2 !important;
+      }
+      .ProductStockInfo{
+        grid-area: 4 / 1 / 5 / span 2 !important;
+      }
+    }
   }
-
-  .ContactIcon{
-    display: none;
-  }
-
-  .ContactPadding{
-    padding: 0 !important;
-  }
-
-  .footerGroup{
-    flex-direction: column-reverse;
-    gap:10px;
-  }
-
-  .NavItems{
-    display: none !important;
-  }
-
-  .burgerButton{
-    display: flex !important;
-  }
-
-
 }
 
 @media only screen and (max-width: 900px) {
@@ -718,3 +709,80 @@ body{
     }
   }
 }
+
+@media only screen and (max-width: 800px) {
+  #product{
+    height: auto;
+  }
+  .ProductGroup{
+    flex-direction: column;
+    align-items: center;
+
+    .ProductMainImg{
+      width: 15rem !important;
+      height: 15rem !important;
+    }
+    .ProductHoverImages{
+      img{
+        width: 3rem !important;
+        height: 3rem !important;
+      }
+    }
+    .ProductBox{
+      grid-template: repeat(4,1fr) / 1fr !important;
+
+      .ProductHeaderGroup{
+        display: flex !important;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+      }
+      .ProductDesctription{
+        grid-area: 2 / 1 / 3 / span 2 !important;
+        display: flex !important;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+
+      }
+      .CartButtonGroup{
+        grid-area: 5 / 1 / 4 / 1 !important;
+        align-items: center !important; 
+      }
+      .ProductStockInfo{
+        grid-area: 3 / 1 / 4 / 1 !important;
+        align-items: center !important;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .ContactContainer{
+    justify-content: center;
+    align-items: start;
+    flex-direction: column;
+  }
+  .ContactIcon{
+    display: none;
+  }
+
+  .ContactPadding{
+    padding: 0 !important;
+  }
+
+  .footerGroup{
+    flex-direction: column-reverse;
+    gap:10px;
+  }
+
+  .NavItems{
+    display: none !important;
+  }
+
+  .burgerButton{
+    display: flex !important;
+  }
+}
+
+
