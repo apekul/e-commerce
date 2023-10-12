@@ -311,8 +311,8 @@ body {
 }
 .trendingSection .TrendingGroup ul li a {
   display: flex;
-  align-items: start;
-  justify-content: start;
+  align-items: flex-start;
+  justify-content: flex-start;
   height: 100%;
   width: 15rem;
   gap: 10px;
@@ -399,7 +399,7 @@ body {
   width: 100%;
   height: 100%;
   display: flex;
-  gap: 2rem;
+  gap: 1rem;
   position: relative;
 }
 #product .ProductGroup .ProductMainImg {
@@ -430,6 +430,7 @@ body {
   border: 2px black solid;
 }
 #product .ProductGroup .ProductBox {
+  padding: 10px;
   display: grid;
   grid-template: repeat(6, 1fr)/repeat(2, 1fr);
   width: 100%;
@@ -452,8 +453,8 @@ body {
 #product .ProductGroup .ProductBox .CartButtonGroup {
   display: flex;
   flex-direction: column;
-  align-items: start;
-  justify-content: end;
+  align-items: flex-start;
+  justify-content: flex-end;
   gap: 10px;
   grid-area: 5/1/span 6/1;
   user-select: none;
@@ -504,9 +505,9 @@ body {
   grid-area: 5/2/span 6/2;
   gap: 5px;
   display: flex;
-  justify-content: end;
+  justify-content: flex-end;
   flex-direction: column;
-  align-items: start;
+  align-items: flex-start;
 }
 #product .ProductGroup .ProductBox .ProductStockInfo .StockInfoGroup {
   display: flex;
@@ -732,7 +733,7 @@ body {
 @media only screen and (max-width: 600px) {
   .ContactContainer {
     justify-content: center;
-    align-items: start;
+    align-items: flex-start;
     flex-direction: column;
   }
   .ContactIcon {
