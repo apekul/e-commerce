@@ -2,7 +2,7 @@ import React from "react";
 
 const Banner = ({ val, content }) => {
   return (
-    <section className={`BannerSection ${val}`}>
+    <section className={`BannerSection ${val} `}>
       <img src={require(`../Assets/Images/furniture.jpg`)} alt="bannerImg" />
       <div>
         <span>

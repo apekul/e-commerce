@@ -1,15 +1,22 @@
 import React from "react";
 
 const GetInspired = () => {
+  const numbOfItems = 6;
   return (
     <section className="GetInspiredSection">
-      <div className="InspiredGrid">
-        <div>1</div>
-        <div>2</div>
-        <div>3</div>
-        <div>4</div>
-        <div>5</div>
-        <div>6</div>
+      <h1>Get Inspired</h1>
+      <div
+        className="InspiredGrid"
+        // style={{ gridTemplateRows: `reapet(${(numbOfItems / 3) * 5}, 1fr)` }}
+      >
+        {Array.from({ length: numbOfItems }).map((item, index) => (
+          <div key={index}>
+            <img
+              src={require(`../Assets/Images/inspiredTest.jpg`)}
+              alt="inspired-img"
+            />
+          </div>
+        ))}
       </div>
       <button>Load More</button>
     </section>

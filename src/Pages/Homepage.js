@@ -15,7 +15,6 @@ const Homepage = () => {
         <Hero categories={[...new Set(data.map((v, i) => v.category))]} />
         <ScrollableSection data={data.slice(0, 10)} title="Trending Now" />
         <Banner
-          val="BannerReverse"
           img=""
           content={{
             img: "",
