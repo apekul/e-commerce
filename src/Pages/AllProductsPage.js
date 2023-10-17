@@ -1,16 +1,17 @@
-import React, { useState, useContext, useRef } from "react";
+import React, { useState, useContext } from "react";
 import { AiFillCaretDown, AiFillCaretUp } from "react-icons/ai";
 import { BsCheck, BsSortDownAlt, BsSortUpAlt } from "react-icons/bs";
 import { Context, UserContext } from "../context";
 import PriceRange from "../Components/priceRange";
+import AllItems from "../Components/AllItems";
 
 const AllProductsPage = () => {
   const [data, setData] = useContext(Context);
   const [show, setShow] = useState(undefined);
   const [type, setType] = useState([]);
   const [range, setRange] = useState();
-
-  const PriceRangeRef = useRef();
+  const [filter, setFilter] = useState(false);
+  const ref = React.useRef();
 
   const updateType = (e) => {
     if (type.includes(e))
@@ -26,10 +27,24 @@ const AllProductsPage = () => {
 
   const categories = [...new Set(data.map((v, i) => v.category))];
 
+  React.useEffect(() => {
+    const handleClick = (event) => {
+      if (ref.current && !ref.current.contains(event.target)) {
+        setShow(undefined);
+      }
+    };
+
+    document.addEventListener("click", handleClick, true);
+
+    return () => {
+      document.removeEventListener("click", handleClick, true);
+    };
+  }, [ref]);
+
   return (
     <section id="allProductsPage">
       <div className="Container">
-        <div className="filterPanelGroup">
+        <div className="filterPanelGroup" ref={ref}>
           {/* Filter by type */}
           <div className="filterButtonGroup">
             <div
@@ -74,7 +89,6 @@ const AllProductsPage = () => {
               {show === "filterPrice" ? <AiFillCaretUp /> : <AiFillCaretDown />}
             </div>
             <div
-              ref={PriceRangeRef}
               className="filterList priceBefore"
               style={{
                 visibility: show === "filterPrice" ? "visible" : "hidden",
@@ -88,7 +102,7 @@ const AllProductsPage = () => {
             <div
               id="filterRate"
               className="filterButton"
-              onClick={(e) => updateShow(e)}
+              onClick={(e) => setFilter(!filter)}
             >
               <p>Rate</p>
               <div
@@ -97,11 +111,11 @@ const AllProductsPage = () => {
               >
                 1
               </div>
-              {show === "filterRate" ? <BsSortUpAlt /> : <BsSortDownAlt />}
+              {filter ? <BsSortUpAlt /> : <BsSortDownAlt />}
             </div>
           </div>
         </div>
-        <div>Content Items</div>
+        <AllItems data={data} />
       </div>
     </section>
   );

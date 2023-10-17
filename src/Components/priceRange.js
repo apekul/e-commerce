@@ -23,7 +23,10 @@ const PriceRange = ({ value }) => {
     }
   };
   return (
-    <div style={{ width: "150px", padding: "20px" }}>
+    <div
+      style={{ width: "150px", padding: "20px" }}
+      className="PriceRangeContainer"
+    >
       <div className="PriceRangeGroup">
         <span>
           $
