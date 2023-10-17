@@ -713,8 +713,8 @@ body {
 }
 .cartGroup .cartItems .cartItem img {
   cursor: pointer;
-  width: 20rem;
-  height: 20rem;
+  width: 15rem;
+  height: 15rem;
   object-position: bottom;
   object-fit: cover;
   border-top-left-radius: 10px;
@@ -764,6 +764,92 @@ body {
 }
 .cartGroup .cartSummary button:hover {
   background-color: #1e6ce8;
+}
+
+#allProductsPage {
+  flex: 1;
+  user-select: none;
+}
+
+.filterPanelGroup {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}
+
+.filterButtonGroup {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+  width: fit-content;
+  padding: 5px 10px 5px 10px;
+  border: 1px solid black;
+  position: relative;
+}
+.filterButtonGroup .filterButton {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.filterButtonGroup .priceBefore:before {
+  content: "";
+  background-color: white;
+  position: absolute;
+  top: -5px;
+  width: 99px;
+  height: 5px;
+}
+.filterButtonGroup .typeBefore:before {
+  content: "";
+  background-color: white;
+  position: absolute;
+  top: -5px;
+  width: 97px;
+  height: 5px;
+}
+.filterButtonGroup .PriceRangeGroup {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.filterButtonGroup .filterList {
+  position: absolute;
+  z-index: 2;
+  border: 1px solid black;
+  top: 37px;
+  display: flex;
+  flex-direction: column;
+  min-width: 11rem;
+  left: -1px;
+}
+.filterButtonGroup .filterList button {
+  background-color: white;
+  border: 1px solid black;
+  padding: 10px;
+  cursor: pointer;
+  width: 100%;
+}
+.filterButtonGroup .filterList button:hover {
+  background-color: #D9D9D9;
+}
+.filterButtonGroup .filterList li {
+  background-color: white;
+  padding: 10px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.filterButtonGroup .filterList li:hover {
+  background-color: #D9D9D9;
+}
+.filterButtonGroup .filterMark {
+  background-color: black;
+  color: white;
+  padding: 4px;
+  margin: 0px 5px 0px 5px;
 }
 
 @media only screen and (max-width: 1050px) {
