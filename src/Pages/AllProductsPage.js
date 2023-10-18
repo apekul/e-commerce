@@ -1,16 +1,29 @@
 import React, { useState, useContext } from "react";
 import { AiFillCaretDown, AiFillCaretUp } from "react-icons/ai";
 import { BsCheck, BsSortDownAlt, BsSortUpAlt } from "react-icons/bs";
-import { Context, UserContext } from "../context";
+import { Context } from "../context";
 import PriceRange from "../Components/priceRange";
 import AllItems from "../Components/AllItems";
 
 const AllProductsPage = () => {
-  const [data, setData] = useContext(Context);
+  const [data] = useContext(Context);
+
+  // Show filter tab based on current ID
   const [show, setShow] = useState(undefined);
+
+  // filter by category
   const [type, setType] = useState([]);
-  const [range, setRange] = useState();
-  const [filter, setFilter] = useState(false);
+
+  // filter by price range
+  const value = {
+    min: 0,
+    max: Math.max(...Object.values(data).map((v) => v.price)),
+  };
+  const [range, setRange] = React.useState([value.min, value.max]);
+
+  // filter by rating
+  const [rating, setRating] = useState(true);
+
   const ref = React.useRef();
 
   const updateType = (e) => {
@@ -82,7 +95,12 @@ const AllProductsPage = () => {
               <p>Price</p>
               <div
                 className="filterMark"
-                style={{ visibility: range ? "visible" : "hidden" }}
+                style={{
+                  visibility:
+                    range[0] !== value.min || range[1] !== value.max
+                      ? "visible"
+                      : "hidden",
+                }}
               >
                 1
               </div>
@@ -94,7 +112,7 @@ const AllProductsPage = () => {
                 visibility: show === "filterPrice" ? "visible" : "hidden",
               }}
             >
-              <PriceRange value={{ min: 100, max: 1000 }} />
+              <PriceRange value={value} range={range} setRange={setRange} />
             </div>
           </div>
           {/* Filter by Rate */}
@@ -102,20 +120,17 @@ const AllProductsPage = () => {
             <div
               id="filterRate"
               className="filterButton"
-              onClick={(e) => setFilter(!filter)}
+              onClick={(e) => setRating(!rating)}
             >
               <p>Rate</p>
-              <div
-                className="filterMark"
-                style={{ visibility: range ? "visible" : "hidden" }}
-              >
+              <div className="filterMark" style={{ visibility: "hidden" }}>
                 1
               </div>
-              {filter ? <BsSortUpAlt /> : <BsSortDownAlt />}
+              {rating ? <BsSortUpAlt /> : <BsSortDownAlt />}
             </div>
           </div>
         </div>
-        <AllItems data={data} />
+        <AllItems data={data} type={type} range={range} rating={rating} />
       </div>
     </section>
   );

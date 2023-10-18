@@ -2,13 +2,12 @@ import React from "react";
 import Slider from "@mui/material/Slider";
 import MuiInput from "@mui/material/Input";
 
-const PriceRange = ({ value }) => {
-  const [range, setRange] = React.useState([value.min, value.max]);
+const PriceRange = ({ value, range, setRange }) => {
+  // const [range, setRange] = React.useState([value.min, value.max]);
   function handleChanges(event, newValue) {
     setRange(newValue);
   }
   const handleInputChange = (event, val) => {
-    // if (event.target.value === "") event.target.value = 0;
     if (val === "min") {
       return setRange(([min, max]) => [event.target.value, max]);
     }
@@ -24,7 +23,7 @@ const PriceRange = ({ value }) => {
   };
   return (
     <div
-      style={{ width: "150px", padding: "20px" }}
+      style={{ width: "200px", padding: "20px" }}
       className="PriceRangeContainer"
     >
       <div className="PriceRangeGroup">

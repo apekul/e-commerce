@@ -5,7 +5,7 @@ import ScrollableSection from "../Components/ScrollableSection";
 import Product from "../Components/Product";
 
 const ProductPage = () => {
-  const [data, setData] = useContext(Context);
+  const [data] = useContext(Context);
   const { id } = useParams();
   return (
     <section id="productpage">

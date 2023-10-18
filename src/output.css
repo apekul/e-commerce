@@ -680,6 +680,8 @@ body {
   align-items: center;
   justify-content: center;
   gap: 20px;
+  width: fit-content;
+  margin: auto;
 }
 
 .filterButtonGroup {
@@ -763,17 +765,20 @@ body {
 
 .AllItemGroup {
   height: 100%;
+  width: 100%;
   margin-top: 2rem;
   margin-bottom: 2rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  justify-items: center;
   gap: 5rem;
-  flex-wrap: wrap;
 }
 
 .ProductFrame:hover {
   box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -4px rgba(0, 0, 0, 0.1);
+}
+.ProductFrame:hover .IconBottom {
+  display: block;
 }
 .ProductFrame:hover .ProductImages {
   visibility: visible;
@@ -806,7 +811,7 @@ body {
   visibility: hidden;
   position: absolute;
   background-color: white;
-  bottom: 6.5rem;
+  bottom: 7rem;
   left: 0.6rem;
   width: 15rem;
   display: flex;
@@ -837,6 +842,7 @@ body {
   display: flex;
   gap: 10px;
   flex-direction: column;
+  justify-content: center;
   height: 30%;
 }
 .ProductFrame a div span {
@@ -861,12 +867,12 @@ body {
   text-align: center;
   background-color: white;
   border-radius: 100%;
-  z-index: 10;
 }
 .ProductFrame .IconTop {
   top: 10px;
 }
 .ProductFrame .IconBottom {
+  display: none;
   bottom: 10px;
 }
 .ProductFrame .ProductIcon:hover {
