@@ -1,7 +1,18 @@
-import React from "react";
+import React, { useContext } from "react";
+import { Context } from "../context";
+import AllItems from "../Components/AllItems";
 
 const FavPage = () => {
-  return <div>FavPage</div>;
+  const [data] = useContext(Context);
+
+  return (
+    <section id="favouritePage">
+      <div className="Container">
+        <h1>Favourite Items</h1>
+        <AllItems data={data} />
+      </div>
+    </section>
+  );
 };
 
 export default FavPage;

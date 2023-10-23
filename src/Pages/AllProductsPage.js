@@ -57,6 +57,7 @@ const AllProductsPage = () => {
   return (
     <section id="allProductsPage">
       <div className="Container">
+        <h1>All Products</h1>
         <div className="filterPanelGroup" ref={ref}>
           {/* Filter by type */}
           <div className="filterButtonGroup">

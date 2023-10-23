@@ -13,7 +13,6 @@ const Homepage = () => {
     <section id="homepage">
       <div className="Container">
         <Hero categories={[...new Set(data.map((v, i) => v.category))]} />
-        <ScrollableSection data={data.slice(0, 10)} title="Trending Now" />
         <Banner
           img=""
           content={{
@@ -24,6 +23,7 @@ const Homepage = () => {
           }}
           link="/"
         />
+        <ScrollableSection data={data.slice(0, 10)} title="Trending Now" />
         <GetInspired />
         <ScrollableSection data={data.slice(0, 10)} title="Bestsellers" />
         <Banner
