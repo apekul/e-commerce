@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Homepage from "./Pages/Homepage";
 import AllProductsPage from "./Pages/AllProductsPage";
@@ -13,7 +13,20 @@ import { Context, UserContext } from "./context";
 
 function App() {
   const [data, setData] = useState(Products);
-  const [userData, setUserData] = useState({ favourites: [], cart: [] });
+  const [userData, setUserData] = useState(() => {
+    const getStorage = JSON.parse(localStorage.getItem("userData"));
+    let pattern = { favourites: [], cart: [] };
+    if (!getStorage) {
+      localStorage.setItem("userData", JSON.stringify(pattern));
+      return pattern;
+    }
+    return getStorage;
+  });
+
+  useEffect(() => {
+    localStorage.setItem("userData", JSON.stringify(userData));
+  }, [userData]);
+
   return (
     <Router>
       <Context.Provider value={[data, setData]}>

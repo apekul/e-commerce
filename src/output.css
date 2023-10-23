@@ -56,6 +56,23 @@ body {
   gap: 15px;
   text-transform: upperCase;
 }
+#navbar .NavItems .HeartIcon {
+  position: relative;
+}
+#navbar .NavItems .HeartIcon span {
+  background-color: red;
+  position: absolute;
+  top: -5px;
+  right: -12px;
+  color: white;
+  font-size: 13px;
+  padding: 3px;
+  width: 13px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 100%;
+}
 #navbar .NavItems li:first-child:after {
   content: "";
   display: block;
@@ -548,6 +565,9 @@ body {
 #cartpage {
   flex: 1;
 }
+#cartpage h1 {
+  text-align: center;
+}
 
 .cartGroup {
   min-height: 50rem;
@@ -559,8 +579,10 @@ body {
   max-height: 50rem;
   width: 100%;
   overflow: auto;
+  display: flex;
+  flex-direction: column;
   align-items: center;
-  justify-content: center;
+  gap: 10px;
   position: relative;
 }
 .cartGroup .cartItems .cartItem:nth-child(odd) {

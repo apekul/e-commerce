@@ -1,14 +1,16 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import {
   AiOutlineHeart,
   AiOutlineShoppingCart,
   AiFillShopping,
   AiOutlineClose,
 } from "react-icons/ai";
+import { UserContext } from "../context";
 import { GiHamburgerMenu } from "react-icons/gi";
 
 const Navbar = () => {
   const [mobile, setMobile] = useState(false);
+  const [userData] = useContext(UserContext);
   return (
     <nav id="navbar">
       <div className="Container ">
@@ -24,8 +26,11 @@ const Navbar = () => {
               <a href="/Allproducts">Products</a>
             </li>
             <li>
-              <a href="/favourites">
+              <a href="/favourites" className="HeartIcon">
                 <AiOutlineHeart size="25px" />
+                {userData.favourites.length > 0 && (
+                  <span>{userData.favourites.length}</span>
+                )}
               </a>
             </li>
             <li>

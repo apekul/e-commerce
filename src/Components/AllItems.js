@@ -23,11 +23,14 @@ const AllItems = ({ data, type, range, rating }) => {
       );
     }
   }, [type, range, rating]);
+
   return (
     <section className="AllItemGroup">
-      {filter.map((item, index) => (
-        <Item item={item} key={index} />
-      ))}
+      {filter.length <= 0 ? (
+        <div>No data to display</div>
+      ) : (
+        filter.map((item, index) => <Item item={item} key={index} />)
+      )}
     </section>
   );
 };
