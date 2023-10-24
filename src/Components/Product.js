@@ -1,4 +1,5 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
+import { UserContext } from "../context";
 import {
   AiFillStar,
   AiFillPlusSquare,
@@ -7,10 +8,19 @@ import {
 import { BsArrowCounterclockwise } from "react-icons/bs";
 
 const Product = ({ item }) => {
+  const [userData, setUserData] = useContext(UserContext);
   const [swapImage, setSwapImage] = useState(null);
   const [totalPrice, setTotalPrice] = useState(item.price);
   const [quantity, setQuantity] = useState(1);
   const [inStock, setInStock] = useState(10);
+
+  const updateCart = () => {
+    const check = userData.find((v) => v.id === item.id);
+
+    if (!check) {
+      return setUserData((prev) => ({ ...prev, cart: [...prev.cart, item] }));
+    }
+  };
 
   const Increment = () => {
     if (quantity === inStock) return;
@@ -83,7 +93,7 @@ const Product = ({ item }) => {
                 onClick={() => Increment()}
               />
             </div>
-            <button>Add to cart</button>
+            <button onClick={() => updateCart()}>Add to cart</button>
           </div>
 
           {/* StockInfo */}

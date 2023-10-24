@@ -3,7 +3,11 @@ import React from "react";
 const Banner = ({ val, content }) => {
   return (
     <section className={`BannerSection ${val} `}>
-      <img src={require(`../Assets/Images/furniture.jpg`)} alt="bannerImg" />
+      <img
+        src={content.img}
+        alt="bannerImg"
+        style={content.pos && { objectPosition: "left" }}
+      />
       <div>
         <span>
           <h1>{content.title}</h1>

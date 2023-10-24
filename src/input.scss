@@ -70,7 +70,7 @@ body{
     gap:15px;
     text-transform: upperCase;
 
-    .HeartIcon{
+    .NavIcon{
       position: relative;
       span{
         background-color: red;
@@ -390,7 +390,7 @@ body{
       width: 35rem;
       height: 35rem;
       object-fit: cover;
-      object-position: top;
+      object-position: center;
     }
     
     .ProductHoverImages{
@@ -437,9 +437,8 @@ body{
       }
       
       .ProductDesctription{
-        font-size: clamp(16px, 2.5vw, 20px);
+        font-size: clamp(12px, 2.5vw, 20px);
         grid-area: 2 / 1 / 5 / span 2 ;
-        
       }
 
       .CartButtonGroup{
@@ -564,7 +563,6 @@ body{
     width: 50%;
     height: 100%;
     object-fit: cover;
-    object-position: left;
   }
   div{
     width: 100%;
@@ -681,7 +679,6 @@ body{
     gap: 10px;
     position: relative;
 
-
     .cartItem:nth-child(odd){
       background-color: rgb(248, 248, 248);
     }
@@ -708,7 +705,7 @@ body{
         justify-content: space-around;
         
         #itemTitle{
-          // max-width: 20rem;
+          max-width: 20rem;
           cursor: pointer;
           height: auto;
           text-align: start;
@@ -729,8 +726,8 @@ body{
           color: $bg-secondary;
           position: absolute;
           font-size: 1rem;
-          bottom: 1rem;
-          right: 1rem;
+          bottom: 2rem;
+          right: 2rem;
           cursor: pointer;
           background: none;
           border: none;
@@ -744,7 +741,7 @@ body{
         cursor: pointer;
         width: 15rem;
         height: 15rem;
-        object-position: bottom;
+        object-position: top;
         object-fit: cover;
         border-top-left-radius: 10px;
         border-bottom-left-radius: 10px;
@@ -1082,48 +1079,6 @@ body{
 }
 
 @media only screen and (max-width: 900px) {
-  .cartGroup{
-    flex-direction: column-reverse;
-
-    .cartItem{
-      img{
-        width: 10rem !important;
-        height: 10rem !important;
-      }
-      div{
-        padding: 10px 10px 0px 10px !important;
-        flex-direction: column;
-        gap:20px !important;
-        justify-content: flex-start !important;
-      }
-    }
-
-    .cartSummary{
-      min-width: 10rem !important;
-    }
-  }
-  #heroGrid{
-    display: flex !important;
-    flex-direction: column;
-    p{
-      font-size: clamp(2rem, 10vw, 5rem) !important;
-    }
-  }
-  .TrendingGroup{
-    a{
-      width: 10rem !important;
-    }
-    .TrendingHoverImages{
-      width: 10rem !important;
-      img{
-        width:2rem !important;
-        height:2rem !important;
-      }
-    }
-  }
-}
-
-@media only screen and (max-width: 800px) {
   #product{
     height: auto;
   }
@@ -1168,6 +1123,51 @@ body{
       }
     }
   }
+  .cartGroup{
+    flex-direction: column-reverse;
+    justify-content: flex-end;
+
+    .cartItem{
+      img{
+        width: 10rem !important;
+        height: 10rem !important;
+      }
+      div{
+        padding: 10px 10px 0px 10px !important;
+        flex-direction: column;
+        gap:20px !important;
+        justify-content: flex-start !important;
+      }
+    }
+
+    .cartSummary{
+      min-width: 10rem !important;
+    }
+  }
+  #heroGrid{
+    display: flex !important;
+    flex-direction: column;
+    height: 10rem;
+    p{
+      font-size: clamp(2rem, 10vw, 5rem) !important;
+    }
+  }
+  .TrendingGroup{
+    a{
+      width: 10rem !important;
+    }
+    .TrendingHoverImages{
+      width: 10rem !important;
+      img{
+        width:2rem !important;
+        height:2rem !important;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 800px) {
+
   .BannerSection{
     flex-direction: column;
 

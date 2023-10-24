@@ -11,7 +11,12 @@ const ProductPage = () => {
     <section id="productpage">
       <div className="Container">
         <Product item={data.filter((v) => v.id === +id)[0]} />
-        <ScrollableSection data={data.slice(0, 10)} title="Trending Now" />
+        <ScrollableSection
+          data={data.filter(
+            (v) => v.category === data.find((v) => v.id === +id).category
+          )}
+          title={`Similar Products: ${data.find((v) => v.id === +id).category}`}
+        />
       </div>
     </section>
   );

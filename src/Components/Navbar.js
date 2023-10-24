@@ -26,7 +26,7 @@ const Navbar = () => {
               <a href="/Allproducts">Products</a>
             </li>
             <li>
-              <a href="/favourites" className="HeartIcon">
+              <a href="/favourites" className="NavIcon">
                 <AiOutlineHeart size="25px" />
                 {userData.favourites.length > 0 && (
                   <span>{userData.favourites.length}</span>
@@ -34,8 +34,11 @@ const Navbar = () => {
               </a>
             </li>
             <li>
-              <a href="/cart">
+              <a href="/cart" className="NavIcon">
                 <AiOutlineShoppingCart size="25px" />
+                {userData.cart.length > 0 && (
+                  <span>{userData.cart.length}</span>
+                )}
               </a>
             </li>
           </ul>

@@ -22,7 +22,9 @@ const CartPage = () => {
             ) : (
               userData.cart.map((item, i) => (
                 <div key={i} className="cartItem">
-                  <img src={item.images[0]} alt="inspired-img" />
+                  <a href={`/product/${item.id}`}>
+                    <img src={item.images[0]} alt="inspired-img" />
+                  </a>
                   <div>
                     <p id="itemTitle">{item.description}</p>
                     <span>
@@ -49,7 +51,9 @@ const CartPage = () => {
             <h2>Order Summary</h2>
             <span>
               <p>Subtotal</p>
-              <p>$100</p>
+              <p>
+                ${userData.cart.reduce((acc, curr) => acc + +curr.price, 0)}
+              </p>
             </span>
             <span>
               <p>Shipping estimate</p>
@@ -57,7 +61,9 @@ const CartPage = () => {
             </span>
             <span>
               <p>Order total</p>
-              <p>$105</p>
+              <p>
+                ${userData.cart.reduce((acc, curr) => acc + +curr.price, 0) + 5}
+              </p>
             </span>
             <button>Checkout</button>
           </div>

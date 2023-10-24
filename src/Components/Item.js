@@ -59,7 +59,7 @@ const Item = ({ item }) => {
           <span>
             {Array.from({ length: 5 }).map((_, key) => (
               <React.Fragment key={key}>
-                {Math.round(item.rating) <= key ? (
+                {Math.floor(item.rating) <= key ? (
                   <AiFillStar color="lightgray" size="20px" />
                 ) : (
                   <AiFillStar color="#fbbf24" size="20px" />
