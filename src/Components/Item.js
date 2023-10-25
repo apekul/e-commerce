@@ -73,6 +73,7 @@ const Item = ({ item }) => {
           <p>${item.price}</p>
         </div>
       </a>
+
       <div className="ProductImages">
         {Object.values(item.images.slice(0, 4)).map((img, i) => (
           <img
