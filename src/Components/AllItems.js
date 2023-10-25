@@ -22,6 +22,7 @@ const AllItems = ({ data, type, range, rating }) => {
         )
       );
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [type, range, rating]);
 
   return (

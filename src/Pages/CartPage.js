@@ -1,4 +1,4 @@
-import React, { useState, useContext } from "react";
+import React, { useContext } from "react";
 import { UserContext } from "../context";
 import { BsFillTrash3Fill } from "react-icons/bs";
 
@@ -14,7 +14,6 @@ const CartPage = () => {
   return (
     <section id="cartpage">
       <div className="Container">
-        {/* <h1>Your Cart</h1> */}
         <div className="cartGroup">
           <div className="cartItems">
             {userData.cart.length <= 0 ? (

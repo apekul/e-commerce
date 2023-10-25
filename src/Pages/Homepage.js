@@ -3,7 +3,7 @@ import Hero from "../Components/Hero";
 import ScrollableSection from "../Components/ScrollableSection";
 import { Context } from "../context";
 import Banner from "../Components/Banner";
-import GetInspired from "../Components/GetInspired";
+// import GetInspired from "../Components/GetInspired";
 
 const Homepage = () => {
   const [data] = useContext(Context);

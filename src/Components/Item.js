@@ -9,7 +9,9 @@ const Item = ({ item }) => {
 
   const updateCart = () => {
     const check = userData.cart.find((e) => e.id === item.id);
-    setUserData((prev) => ({ ...prev, cart: [...prev.cart, item] }));
+    if (!check) {
+      setUserData((prev) => ({ ...prev, cart: [...prev.cart, item] }));
+    }
   };
 
   const updateFav = () => {
