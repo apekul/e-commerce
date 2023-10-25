@@ -22,8 +22,7 @@ const Homepage = () => {
           }}
         />
         <ScrollableSection data={data.slice(0, 10)} title="Trending Now" />
-        <GetInspired />
-        <ScrollableSection data={data.slice(0, 10)} title="Bestsellers" />
+        {/* <GetInspired /> */}
         <Banner
           val="BannerReverse"
           content={{
@@ -35,6 +34,7 @@ const Homepage = () => {
             pos: "left",
           }}
         />
+        <ScrollableSection data={data.slice(0, 10)} title="Bestsellers" />
       </div>
     </section>
   );

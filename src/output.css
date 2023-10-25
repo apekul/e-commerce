@@ -493,7 +493,7 @@ body {
 .BannerSection div span {
   width: 80%;
 }
-.BannerSection div span h1, .BannerSection div span p, .BannerSection div span a {
+.BannerSection div span p {
   margin-bottom: 20px;
 }
 .BannerSection div span a {
@@ -937,10 +937,10 @@ body {
     grid-area: 2/1/4/span 2 !important;
   }
   .ProductGroup .ProductBox .CartButtonGroup {
-    grid-area: 5/1/span 6/span 2 !important;
+    grid-area: 5/1/span 6/1 !important;
   }
   .ProductGroup .ProductBox .ProductStockInfo {
-    grid-area: 4/1/5/span 2 !important;
+    grid-area: 5/2/span 6/2 !important;
   }
 }
 @media only screen and (max-width: 900px) {
