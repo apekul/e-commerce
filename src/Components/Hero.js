@@ -17,7 +17,7 @@ const Hero = ({ categories }) => {
             src={require(`../Assets/HeroImages/smartphones.jpg`)}
             alt="heroImg"
           />
-          <p>Smartphones</p>
+          <p>smartphones</p>
         </a>
       </div>
     </section>
