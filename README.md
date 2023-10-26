@@ -16,5 +16,4 @@ A minimalist app imitating an online store, designed in Figma and built using Re
 
 #### Screenshots
 
-
-
+![Homepage (1)](https://github.com/apekul/e-commerce/assets/22819317/ae810ef7-ceff-4285-81a4-85eba86e551b)
