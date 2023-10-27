@@ -64,7 +64,7 @@ export const Products = [
       "/Images/Electronics/Laptops/Asus/Laptop-ASUS-VivoBook-16X-K3605ZC-N1089W-01.jpg",
       "/Images/Electronics/Laptops/Asus/Laptop-ASUS-Vivobook-16X-K3605ZC-N1089W-front.jpg",
       "/Images/Electronics/Laptops/Asus/Laptop-ASUS-Vivobook-16X-K3605ZC-N1089W-gora.jpg",
-      "/Images/Electronics/Laptops/Asus/Laptop-ASUS-Vivobook-16X-K3605ZC-N1089W-gora.jpg",
+      "/Images/Electronics/Laptops/Asus/Laptop-ASUS-Vivobook-16X-K3605ZC-N1089W-przod-prawy.jpg",
     ],
   },
   {

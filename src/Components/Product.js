@@ -4,6 +4,8 @@ import {
   AiFillStar,
   AiFillPlusSquare,
   AiFillMinusSquare,
+  AiOutlineHeart,
+  AiFillHeart,
 } from "react-icons/ai";
 import { BsArrowCounterclockwise } from "react-icons/bs";
 
@@ -19,6 +21,20 @@ const Product = ({ item }) => {
     if (!check) {
       return setUserData((prev) => ({ ...prev, cart: [...prev.cart, item] }));
     }
+  };
+
+  const updateFav = () => {
+    const check = userData.favourites.find((e) => e.id === item.id);
+    if (check) {
+      return setUserData((prev) => ({
+        ...prev,
+        favourites: [...prev.favourites].filter((v) => v.id !== item.id),
+      }));
+    }
+    return setUserData((prev) => ({
+      ...prev,
+      favourites: [...prev.favourites, item],
+    }));
   };
 
   const Increment = () => {
@@ -42,12 +58,25 @@ const Product = ({ item }) => {
   return (
     <section id="product">
       <div className="ProductGroup">
-        <div>
+        <div className="ProductImgGroup">
           <img
             className="ProductMainImg"
             src={swapImage || item.images[0]}
             alt={item.title}
           />
+          {userData.favourites.find((e) => e.id === item.id) ? (
+            <AiFillHeart
+              className="ProductHeart"
+              style={{ color: "red" }}
+              onClick={() => updateFav()}
+            />
+          ) : (
+            <AiOutlineHeart
+              className="ProductHeart"
+              onClick={() => updateFav()}
+            />
+          )}
+
           <div className="ProductHoverImages">
             {Object.values(item.images).map((img, i) => (
               <img

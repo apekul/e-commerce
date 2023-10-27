@@ -392,6 +392,27 @@ body{
       object-fit: cover;
       object-position: center;
     }
+    .ProductImgGroup{
+      position: relative;
+
+      .ProductHeart{
+        cursor: pointer;
+        position: absolute;
+        top: 10px;
+        left: 0;
+        font-size: 2rem;
+        background-color: white;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 100%;
+        padding: 5px;
+        transition: all 0.1s ease-in-out;
+      }
+      .ProductHeart:hover{
+        background-color: $bg-secondary;
+      }
+    }
     
     .ProductHoverImages{
       transition: all 0.1s ease-in-out;
